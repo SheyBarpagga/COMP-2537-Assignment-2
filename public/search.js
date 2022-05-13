@@ -46,14 +46,14 @@ x.addEventListener("click",function() {
 
     for (var y = 0; y < pokemonData.length; y++) {
 
-        if(temp.localeCompare(pokemonData.indexOf(y).valueOf(0))) {
+        if(temp.localeCompare(pokemonData.indexOf(y).valueOf(0)) == 0) {
             fetch(`https://pokeapi.co/api/v2/pokemon/ditto`)
 
-        .then(response => response.json())
+            .then(response => response.json())
 
-        .then(function(data) {
-            addItem(data);
-    })
+            .then(function(data) {
+                addItem(data);
+            })
         }
 
     }
