@@ -37,7 +37,8 @@ function SearchName() {
 function SearchWeight() {
     var x = document.createElement("a");
     x.classList.add("sbutton");
-    x.style.cssText = "background-color: black;color: white;padding: 20%;text-align: center;text-decoration: none;display: inline-block;"
+    x.style.cssText = "background-color: black;color: white;padding: 5%;text-align: center;text-decoration: none;display: inline-block;";
+
     x.addEventListener("click", function() {
 
         var temp = document.getElementById("weight").value;
@@ -63,7 +64,7 @@ function SearchHeight() {
     x.addEventListener("click", function() {
 
         var temp = document.getElementById("height").value;
-
+        console.log(temp)
         for (var y = 1; y < 200; y++) {
             fetch(`https://pokeapi.co/api/v2/pokemon/${y}`)
 
