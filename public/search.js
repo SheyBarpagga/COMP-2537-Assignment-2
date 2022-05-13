@@ -43,9 +43,9 @@ x.addEventListener("click",function() {
     var temp = document.getElementById("name").value;
     console.log(temp);
 
-    for (const element of pokemonData) {
-        
-        if(temp.localeCompare(element[0])) {
+    for (var y = 0; y < pokemonData.length; y++) {
+
+        if(temp.localeCompare(pokemonData[y][0])) {
             fetch(`https://pokeapi.co/api/v2/pokemon/ditto`)
 
         .then(response => response.json())
