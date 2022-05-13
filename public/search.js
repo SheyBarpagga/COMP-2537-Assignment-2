@@ -43,18 +43,18 @@ x.classList.add("test");
 x.addEventListener("click",function() {
     var temp = document.getElementById("name").value;
     console.log(temp);
-    console.log(pokemonData[0])
+    console.log(pokemonData);
     for (var y = 0; y < pokemonData.length; y++) {
+        fetch(`https://pokeapi.co/api/v2/pokemon/ditto`)
 
-        if(temp === pokemonData[y][0]) {
-            fetch(`https://pokeapi.co/api/v2/pokemon/ditto`)
+        .then(response => response.json())
 
-            .then(response => response.json())
-
-            .then(function(data) {
+        .then(function(data) {
+            if(temp === data.name) {
                 addItem(data);
-            })
-        }
+            }
+        })
+ 
 
     }
 })
