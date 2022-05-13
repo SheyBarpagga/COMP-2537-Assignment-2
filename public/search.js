@@ -37,6 +37,7 @@ function SearchName() {
 function SearchWeight() {
     var x = document.createElement("a");
     x.classList.add("sbutton");
+    x.style.cssText = "background-color: black;color: white;padding: 20%;text-align: center;text-decoration: none;display: inline-block;"
     x.addEventListener("click", function() {
 
         var temp = document.getElementById("weight").value;
