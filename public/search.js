@@ -102,9 +102,22 @@ function addItem(pokemon) {
     let colTwo = document.getElementById("colTwo");
     let colThree = document.getElementById("colThree");
 
-    
+    if(boxCounter == 1) {
+        colOne.appendChild(pokeLink);
+    } else if(boxCounter == 2) {
+        colTwo.appendChild(pokeLink);
+    } else {
+        colThree.appendChild(pokeLink);
+    }
 
-    mainCont.appendChild(pokeLink);
+    mainCont.appendChild(colOne);
+    mainCont.appendChild(colTwo);
+    mainCont.appendChild(colThree);
+
+    if(boxCounter == 3) {
+        boxCounter = 0;
+    }
+    boxCounter++;
 
     pokeLink.addEventListener("click", () => {
         console.log(pokeLink);
