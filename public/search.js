@@ -43,7 +43,7 @@ x.classList.add("test");
 x.addEventListener("click",function() {
     var temp = document.getElementById("name").value;
     console.log(temp);
-
+    console.log(pokemonData[0])
     for (var y = 0; y < pokemonData.length; y++) {
 
         if(temp === pokemonData[y][0]) {
