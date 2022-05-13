@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/SheyBarpagga/COMP-2537-Assignment-2#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "ejs": "^3.1.8",
     "express": "^4.18.1"
   }
