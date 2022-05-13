@@ -6,6 +6,8 @@ var boxCounter = 1;
 document.addEventListener("DOMContentLoaded", () => {
 
     SearchName();
+    SearchHeight();
+    SearchWeight();
 
 })
 
