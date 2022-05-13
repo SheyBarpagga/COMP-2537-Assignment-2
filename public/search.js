@@ -46,7 +46,7 @@ x.addEventListener("click",function() {
 
     for (var y = 0; y < pokemonData.length; y++) {
 
-        if(temp === pokemonData.indexOf(y).indexOf(0)) {
+        if(temp === pokemonData[y][0]) {
             fetch(`https://pokeapi.co/api/v2/pokemon/ditto`)
 
             .then(response => response.json())
