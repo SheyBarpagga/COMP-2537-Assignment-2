@@ -15,8 +15,8 @@ app.listen(process.env.PORT || 5000, function (err) {
 })
 
 
-app.get('/', function(req, res) {
-    res.send('https://intense-woodland-48789.herokuapp.com/index.html');
+app.get('https://intense-woodland-48789.herokuapp.com/', function(req, res) {
+    res.send('/public/index.html');
 });
 
 app.use(express.static('./public'));
