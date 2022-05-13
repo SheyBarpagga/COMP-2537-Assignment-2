@@ -40,7 +40,7 @@ function test(){
 var x = document.createElement("a");
 x.classList.add("test");
 x.addEventListener("click",function() {
-    var temp = document.getElementById("name").nodeValue;
+    var temp = document.getElementById("name").value;
     console.log(temp);
 
     for (const element of pokemonData) {
