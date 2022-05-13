@@ -1,6 +1,7 @@
 
 var pokemonData = [];
 var counter = 1;
+var boxCounter = 1;
 
 document.addEventListener("DOMContentLoaded", () => {
     initList();
@@ -66,7 +67,7 @@ function addItem(pokemon) {
     let pokemonIMG = document.createElement("img");
     var pokeLink = document.createElement("a");
 
-    pokemonIMG.srcset = `https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`;
+    pokemonIMG.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`;
 
     let imgBox = document.createElement("div");
     imgBox.style.width = "200px";
@@ -95,6 +96,13 @@ function addItem(pokemon) {
     pokeLink.appendChild(pokeCont);
     pokeLink.href = "profile.html";
     let mainCont = document.getElementById("main-container");
+
+
+    let colOne = document.getElementById("colOne");
+    let colTwo = document.getElementById("colTwo");
+    let colThree = document.getElementById("colThree");
+
+    
 
     mainCont.appendChild(pokeLink);
 
