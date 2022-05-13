@@ -37,7 +37,7 @@ function SearchName() {
 function SearchWeight() {
     var x = document.createElement("a");
     x.classList.add("sbutton");
-    x.style.cssText = "background-color: black;color: white;padding: 5%;text-align: center;text-decoration: none;display: inline-block;";
+    x.style.cssText = "background-color: black;color: white;padding: 1%;text-align: center;text-decoration: none;display: inline-block;";
 
     x.addEventListener("click", function() {
 
@@ -48,7 +48,7 @@ function SearchWeight() {
 
             .then(response => response.json())
             .then(function(data) {
-                if(temp === data.weight) {
+                if(String(temp )=== String(data.weight)) {
                     addItem(data);
                 }
             })
@@ -70,7 +70,7 @@ function SearchHeight() {
 
             .then(response => response.json())
             .then(function(data) {
-                if(temp === data.height) {
+                if(String(temp) === String(data.height)) {
                     addItem(data);
                 }
             })
