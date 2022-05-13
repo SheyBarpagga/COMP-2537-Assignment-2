@@ -11,10 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
+function clearChildren() {
+    if(document.getElementById("colOne").hasChildNodes()) {
+        document.getElementById("colOne").innerHTML = "";
+        document.getElementById("colTwo").innerHTML = "";
+        document.getElementById("colThree").innerHTML = "";
+    }
+}
+
 function SearchName() {
     var x = document.createElement("a");
     x.classList.add("sbutton");
     x.addEventListener("click",function() {
+        clearChildren();
+
         var temp = document.getElementById("name").value;
         console.log(temp);
         console.log(pokemonData);
@@ -40,7 +50,7 @@ function SearchWeight() {
     x.style.cssText = "background-color: black;color: white;padding: 1%;text-align: center;text-decoration: none;display: inline-block;";
 
     x.addEventListener("click", function() {
-
+        clearChildren();
         var temp = document.getElementById("weight").value;
 
         for (var y = 1; y < 200; y++) {
@@ -62,7 +72,7 @@ function SearchHeight() {
     var x = document.createElement("a");
     x.classList.add("sbutton");
     x.addEventListener("click", function() {
-
+        clearChildren();
         var temp = document.getElementById("height").value;
         console.log(temp)
         for (var y = 1; y < 200; y++) {
