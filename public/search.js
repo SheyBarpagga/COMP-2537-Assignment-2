@@ -4,64 +4,78 @@ var counter = 1;
 var boxCounter = 1;
 
 document.addEventListener("DOMContentLoaded", () => {
-    initList();
-    console.log(pokemonData);
-    test();
+
+    SearchName();
+
 })
 
-function initList() {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=900')
-    .then(response => response.json())
-    .then(function(pokeData) {
-        pokeData.results.forEach(function(pokemon) {
-            getPokeData(pokemon);
-        })
-    });
-}
+function SearchName() {
+    var x = document.createElement("a");
+    x.classList.add("sbutton");
+    x.addEventListener("click",function() {
+        var temp = document.getElementById("name").value;
+        console.log(temp);
+        console.log(pokemonData);
+        for (var y = 1; y < 200; y++) {
+            fetch(`https://pokeapi.co/api/v2/pokemon/${y}`)
 
-function getPokeData(pokemon) {
-    fetch(pokemon.url)
+            .then(response => response.json())
 
-    .then(response => response.json())
-
-    .then(function(data) {
-
-        let currentData = [];
-
-        currentData.push(data.name);
-        currentData.push(data.height);
-        currentData.push(data.weight);
-        currentData.push(data.types[0].type["name"]);
-
-        pokemonData[counter] = currentData;
-        counter++;
+            .then(function(data) {
+                if(temp === data.name) {
+                    addItem(data);
+                }
+            })
+        }
     })
+    x.innerText = "Search Name"
+    document.getElementById("name-container").appendChild(x);
 }
-function test(){
-var x = document.createElement("a");
-x.classList.add("test");
-x.addEventListener("click",function() {
-    var temp = document.getElementById("name").value;
-    console.log(temp);
-    console.log(pokemonData);
-    for (var y = 0; y < pokemonData.length; y++) {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${y}`)
 
-        .then(response => response.json())
+function SearchWeight() {
+    var x = document.createElement("a");
+    x.classList.add("sbutton");
+    x.addEventListener("click", function() {
 
-        .then(function(data) {
-            if(temp === data.name) {
-                addItem(data);
-            }
-        })
- 
+        var temp = document.getElementById("weight").value;
 
-    }
-})
+        for (var y = 1; y < 200; y++) {
+            fetch(`https://pokeapi.co/api/v2/pokemon/${y}`)
 
-x.innerText = "wagwan"
-document.getElementById("main-container").appendChild(x);
+            .then(response => response.json())
+            .then(function(data) {
+                if(temp === data.weight) {
+                    addItem(data);
+                }
+            })
+        }
+    })
+    x.innerText = "Search Weight"
+    document.getElementById("weight-container").appendChild(x);
 }
+
+function SearchHeight() {
+    var x = document.createElement("a");
+    x.classList.add("sbutton");
+    x.addEventListener("click", function() {
+
+        var temp = document.getElementById("height").value;
+
+        for (var y = 1; y < 200; y++) {
+            fetch(`https://pokeapi.co/api/v2/pokemon/${y}`)
+
+            .then(response => response.json())
+            .then(function(data) {
+                if(temp === data.height) {
+                    addItem(data);
+                }
+            })
+        }
+    })
+    x.innerText = "Search Height"
+    document.getElementById("height-container").appendChild(x);
+}
+
 function addItem(pokemon) {
     let pokeCont = document.createElement("div");
     let pokemonIMG = document.createElement("img");
