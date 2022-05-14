@@ -184,3 +184,52 @@ app.get('https://intense-woodland-48789.herokuapp.com/search.html', function(req
 app.use(express.static('./public'));
 app.use(express.static('/public/pikachu.jpg/'))
 
+
+
+app.get('/pokemon/getPoke/bulbasaur', function(req, res) {
+  pokeModel.findOne({id: 1}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/ivysaur', function(req, res) {
+  pokeModel.findOne({id: 2}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/venusaur', function(req, res) {
+  pokeModel.findOne({id: 3}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/charmander', function(req, res) {
+  pokeModel.findOne({id: 4}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/charmeleon', function(req, res) {
+  pokeModel.findOne({id: 5}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/charizard', function(req, res) {
+  pokeModel.findOne({id: 6}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+
+app.get('/pokemon/getPoke/squirtle', function(req, res) {
+  pokeModel.findOne({id: 7}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/wartortle', function(req, res) {
+  pokeModel.findOne({id: 8}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/blastoise', function(req, res) {
+  pokeModel.findOne({id: 9}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+
