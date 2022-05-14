@@ -70,7 +70,7 @@ app.get('/pokemon/getPoke', function(req, res) {
 
 for (var x = 1; x < 31; x++) {
   app.get(`/pokemon/getPoke/${x}`, function(req, res) {
-    pokeModel.findOne({id: x}, function(err, data){
+    pokeModel.findOne({id: 1}, function(err, data){
         if (err){
           console.log("Error " + err);
         }else{
