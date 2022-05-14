@@ -2,7 +2,6 @@
 var counter = 0;
 document.addEventListener("DOMContentLoaded", () => {
     getPoke();
-    addNewEvent("hello");
 })
 
 

@@ -31,7 +31,42 @@ const TimesSchema = new mongoose.Schema({
     time: Date
 });
 
-const timeLineModel = mongoose.model("times", TimesSchema); 
+const PokeSchema = mongoose.Schema({
+    abilities: Array,
+    base_experience: Number,
+    forms: Array,
+    game_indices: Array,
+    height: Number,
+    held_items: Array,
+    id: Number,
+    is_default: Boolean,
+    location_area_encounters: String,
+    moves: Array,
+    name: String,
+    order: Number,
+    past_types: Array,
+    species: Object,
+    sprites: Object,
+    stats: Array,
+    types: Array,
+    weight: Number
+})
+
+const timeLineModel = mongoose.model("times", TimesSchema);
+
+const pokeModel = mongoose.model("pokemon", PokeSchema);
+
+app.get('/pokemon/getPoke', function(req, res) {
+
+  pokeModel.find({}, function(err, data){
+      if (err){
+        console.log("Error " + err);
+      }else{
+        console.log("Data "+ JSON.stringify(data) );
+      }
+      res.send(JSON.stringify(data));
+  });
+})
 
 app.get('/times/getAllEvents', function(req, res) {
 

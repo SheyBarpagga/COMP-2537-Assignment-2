@@ -43,6 +43,7 @@ function SearchName() {
     })
     x.innerText = "Search Name"
     document.getElementById("name-container").appendChild(x);
+    addNewEvent(`Searched for ${document.getElementById("name").value}`);
 }
 
 function SearchWeight() {
@@ -67,6 +68,7 @@ function SearchWeight() {
     })
     x.innerText = "Search Weight"
     document.getElementById("weight-container").appendChild(x);
+    addNewEvent(`Searched pokemon of ${document.getElementById("weight").value} weight`);
 }
 
 function SearchHeight() {
@@ -90,6 +92,7 @@ function SearchHeight() {
     })
     x.innerText = "Search Height"
     document.getElementById("height-container").appendChild(x);
+    addNewEvent(`Searched pokemon of ${document.getElementById("height").value} height`);
 }
 
 function addItem(pokemon) {
@@ -152,9 +155,25 @@ function addItem(pokemon) {
     pokeLink.addEventListener("click", () => {
         console.log(pokeLink);
         localStorage.setItem("pokemon", pokeLink.firstChild.firstChild.textContent);
+        addNewEvent(pokeLink.firstChild.firstChild.textContent);
         })
 }
 
+function addNewEvent(poke_name) {
+    var now = new Date(Date.now());
+    var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+    console.log(formatted);
+    $.ajax({
+        url: "https://intense-woodland-48789.herokuapp.com/times/insert",
+        type: "put",
+        data: {
+            text: `${poke_name}`,
+            hits: 1,
+            time: now
+        },
+        success: (res)=>{console.log(res)}
+    })
+}
 
 
 
