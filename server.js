@@ -56,6 +56,22 @@ app.use(express.static('./public'));
 app.use(express.static('/public/pikachu.jpg/'))
 
 
+app.get('https://intense-woodland-48789.herokuapp.com/Times/insert', function(req, res) {
+    timeLineModel.create({
+      'text': req.body.text,
+      'hits': req.body.hits,
+      'time': req.body.time
+    }, function(err, data){
+      if (err){
+        console.log("Error " + err);
+      }else{
+        console.log("Data "+ JSON.stringify(data) );
+      }
+      res.send(JSON.stringify(data));
+  });
+}
+)
+
 app.put('https://intense-woodland-48789.herokuapp.com/Times/insert', function(req, res) {
     timeLineModel.create({
       'text': req.body.text,
