@@ -89,7 +89,7 @@ function addNewEvent(poke_name) {
     var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
     console.log(formatted);
     $.ajax({
-        url: "https://intense-woodland-48789.herokuapp.com/Times/insert",
+        url: "https://intense-woodland-48789.herokuapp.com/times/insert",
         type: "put",
         body: {
             text: `${poke_name}`,
