@@ -13,7 +13,7 @@ function getPoke() {
         .then(response => response.json())
 
         .then(function(pokepokemon) {
-            console.log(pokepokemon);
+            console.log(pokepokemon[0]);
             getPokepokemon(pokepokemon);
         })
     }
