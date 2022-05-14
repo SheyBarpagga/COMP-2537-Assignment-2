@@ -69,8 +69,9 @@ app.get('/pokemon/getPoke', function(req, res) {
 })
 
 for (var x = 1; x < 31; x++) {
+  var mystr = `${x}`;
   app.get(`/pokemon/getPoke/${x}`, function(req, res) {
-    pokeModel.findOne({id: 1}, function(err, data){
+    pokeModel.findOne({id: parseInt(mystr)}, function(err, data){
         if (err){
           console.log("Error " + err);
         }else{
