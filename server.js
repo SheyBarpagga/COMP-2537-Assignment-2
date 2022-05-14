@@ -69,6 +69,4 @@ app.put('/times/insert', function(req, res) {
       }
       res.send(JSON.stringify(data));
   });
-}
-
-)
+})
