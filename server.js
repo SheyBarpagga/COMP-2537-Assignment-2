@@ -67,10 +67,11 @@ app.get('/pokemon/getPoke', function(req, res) {
       res.send(JSON.stringify(data));
   });
 })
+
 for (var x = 1; x < 31; x++) {
   app.get(`/pokemon/getPoke/${x}`, function(req, res) {
 
-    pokeModel.find({id: `${x}`}, function(err, data){
+    pokeModel.find({'id': `${x}`}, function(err, data){
         if (err){
           console.log("Error " + err);
         }else{
@@ -80,6 +81,7 @@ for (var x = 1; x < 31; x++) {
     });
   })
 }
+
 app.get('/times/getAllEvents', function(req, res) {
 
   timeLineModel.find({}, function(err, data){
