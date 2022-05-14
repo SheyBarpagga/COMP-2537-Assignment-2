@@ -44,6 +44,14 @@ app.get('https://intense-woodland-48789.herokuapp.com', function(req, res) {
     res.send('/public/index.html');
 });
 
+app.get('https://intense-woodland-48789.herokuapp.com/profile.html', function(req, res) {
+    res.send('/public/profile.html');
+});
+
+app.get('https://intense-woodland-48789.herokuapp.com/search.html', function(req, res) {
+    res.send('/public/search.html');
+});
+
 app.use(express.static('./public'));
 app.use(express.static('/public/pikachu.jpg/'))
 
