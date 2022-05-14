@@ -7,7 +7,7 @@ function getProfile() {
 
     let pokemon = localStorage.getItem("pokemon");
 
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+    fetch(`https://intense-woodland-48789.herokuapp.com/pokemon/getPoke/${pokemon}`)
 
     .then(response => response.json())
 

@@ -29,8 +29,8 @@ function SearchName() {
         var temp = document.getElementById("name").value;
         console.log(temp);
         console.log(pokemonData);
-        for (var y = 1; y < 200; y++) {
-            fetch(`https://pokeapi.co/api/v2/pokemon/${y}`)
+        for (var y = 1; y < 9; y++) {
+            fetch(`https://intense-woodland-48789.herokuapp.com/pokemon/getPoke/${y}`)
 
             .then(response => response.json())
 
