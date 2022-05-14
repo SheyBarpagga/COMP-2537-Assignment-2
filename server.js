@@ -27,7 +27,7 @@ const TimesSchema = new mongoose.Schema({
 
 const timeLineModel = mongoose.model("Times", TimesSchema); 
 
-app.get('/Times/getAllEvents', function(req, res) {
+app.get('https://intense-woodland-48789.herokuapp.com/Times/getAllEvents', function(req, res) {
 
     timeLineModel.find({}, function(err, data){
         if (err){
