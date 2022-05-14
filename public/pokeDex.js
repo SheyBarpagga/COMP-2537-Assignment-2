@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function getPoke() {
     for (var x = 0; x < 9; x++) {
-        var random = Math.floor(Math.random() * 900);
-        fetch(`https://pokeapi.co/api/v2/pokemon/${random}`)
+        var random = Math.floor(Math.random() * 30);
+        fetch(`https://intense-woodland-48789.herokuapp.com/pokemon/getPoke/${random}`)
 
         .then(response => response.json())
 
