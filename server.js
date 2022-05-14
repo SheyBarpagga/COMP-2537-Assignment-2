@@ -40,7 +40,7 @@ app.get('/Times/getAllEvents', function(req, res) {
   })
 
 
-app.get('https://intense-woodland-48789.herokuapp.com/', function(req, res) {
+app.get('https://intense-woodland-48789.herokuapp.com', function(req, res) {
     res.send('/public/index.html');
 });
 
