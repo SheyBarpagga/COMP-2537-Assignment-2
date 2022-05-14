@@ -76,9 +76,26 @@ function getPokepokemon(pokemon) {
 
 
         pokeLink.addEventListener("click", () => {
-        console.log(pokeLink);
-        localStorage.setItem("pokemon", pokeLink.firstChild.firstChild.textContent);
+            console.log(pokeLink);
+            localStorage.setItem("pokemon", pokeLink.firstChild.firstChild.textContent);
+            addNewEvent(pokeLink.firstChild.firstChild.textContent);
         })
 }
 
 
+function addNewEvent(poke_name) {
+
+    var now = new Date(Date.now());
+    var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+    console.log(now);
+    $.ajax({
+        url: "https://intense-woodland-48789.herokuapp.com/Times/insert",
+        type: "put",
+        body: {
+            text: `${poke_name}`,
+            hits: 1,
+            time: now
+        },
+        success: (res)=>{console.log(res)}
+    })
+}
