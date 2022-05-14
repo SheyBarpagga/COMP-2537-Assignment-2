@@ -43,7 +43,8 @@ function SearchName() {
     })
     x.innerText = "Search Name"
     document.getElementById("name-container").appendChild(x);
-    addNewEvent(`Searched for ${document.getElementById("name").value}`);
+    var temp = document.getElementById("name").value;
+    addNewEvent(`Searched for ${temp}`);
 }
 
 function SearchWeight() {
@@ -68,7 +69,8 @@ function SearchWeight() {
     })
     x.innerText = "Search Weight"
     document.getElementById("weight-container").appendChild(x);
-    addNewEvent(`Searched pokemon of ${document.getElementById("weight").value} weight`);
+    var temp = document.getElementById("weight").value;
+    addNewEvent(`Searched pokemon of ${temp} weight`);
 }
 
 function SearchHeight() {
@@ -92,7 +94,8 @@ function SearchHeight() {
     })
     x.innerText = "Search Height"
     document.getElementById("height-container").appendChild(x);
-    addNewEvent(`Searched pokemon of ${document.getElementById("height").value} height`);
+    var temp = document.getElementById("height").value;
+    addNewEvent(`Searched pokemon of ${temp} height`);
 }
 
 function addItem(pokemon) {
