@@ -68,19 +68,19 @@ app.get('/pokemon/getPoke', function(req, res) {
   });
 })
 
-for (var x = 1; x < 31; x++) {
-  var mystr = `${x}`;
-  app.get(`/pokemon/getPoke/${x}`, function(req, res) {
-    pokeModel.findOne({id: parseInt(mystr)}, function(err, data){
-        if (err){
-          console.log("Error " + err);
-        }else{
-          console.log("Data "+ JSON.stringify(data) );
-        }
-        res.send(JSON.stringify(data));
-    });
-  })
-}
+// for (var x = 1; x < 31; x++) {
+//   var mystr = `${x}`;
+//   app.get(`/pokemon/getPoke/${x}`, function(req, res) {
+//     pokeModel.findOne({id: parseInt(mystr)}, function(err, data){
+//         if (err){
+//           console.log("Error " + err);
+//         }else{
+//           console.log("Data "+ JSON.stringify(data) );
+//         }
+//         res.send(JSON.stringify(data));
+//     });
+//   })
+// }
 
 
 app.get('/times/getAllEvents', function(req, res) {
@@ -111,6 +111,58 @@ app.put('/times/insert', function(req, res) {
 
 });
 })
+
+
+app.get('/pokemon/getPoke/1', function(req, res) {
+  pokeModel.find({id: 1}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/2', function(req, res) {
+  pokeModel.find({id: 2}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/3', function(req, res) {
+  pokeModel.find({id: 3}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/4', function(req, res) {
+  pokeModel.find({id: 4}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/5', function(req, res) {
+  pokeModel.find({id: 5}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/6', function(req, res) {
+  pokeModel.find({id: 6}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+
+app.get('/pokemon/getPoke/7', function(req, res) {
+  pokeModel.find({id: 7}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/8', function(req, res) {
+  pokeModel.find({id: 8}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+app.get('/pokemon/getPoke/9', function(req, res) {
+  pokeModel.find({id: 9}, function(err, data){
+      res.send(JSON.stringify(data));
+  });
+})
+
+
+
+
 
 
 app.get('https://intense-woodland-48789.herokuapp.com/', function(req, res) {
