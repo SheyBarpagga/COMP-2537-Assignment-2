@@ -25,19 +25,8 @@ const TimesSchema = new mongoose.Schema({
     time: Date
 });
 
-const timeLineModel = mongoose.model("Times", TimesSchema); 
+const timeLineModel = mongoose.model("times", TimesSchema); 
 
-app.get('https://intense-woodland-48789.herokuapp.com/Times/getAllEvents', function(req, res) {
-
-    timeLineModel.find({}, function(err, data){
-        if (err){
-          console.log("Error " + err);
-        }else{
-          console.log("Data "+ JSON.stringify(data) );
-        }
-        res.send(JSON.stringify(data));
-    });
-  })
 
 
 app.get('https://intense-woodland-48789.herokuapp.com', function(req, res) {
@@ -55,24 +44,19 @@ app.get('https://intense-woodland-48789.herokuapp.com/search.html', function(req
 app.use(express.static('./public'));
 app.use(express.static('/public/pikachu.jpg/'))
 
+app.get('https://intense-woodland-48789.herokuapp.com/times/getAllEvents', function(req, res) {
 
-app.get('https://intense-woodland-48789.herokuapp.com/Times/insert', function(req, res) {
-    timeLineModel.create({
-      'text': req.body.text,
-      'hits': req.body.hits,
-      'time': req.body.time
-    }, function(err, data){
-      if (err){
-        console.log("Error " + err);
-      }else{
-        console.log("Data "+ JSON.stringify(data) );
-      }
-      res.send(JSON.stringify(data));
-  });
-}
-)
+    timeLineModel.find({}, function(err, data){
+        if (err){
+          console.log("Error " + err);
+        }else{
+          console.log("Data "+ JSON.stringify(data) );
+        }
+        res.send(JSON.stringify(data));
+    });
+  })
 
-app.put('https://intense-woodland-48789.herokuapp.com/Times/insert', function(req, res) {
+app.put('https://intense-woodland-48789.herokuapp.com/times/insert', function(req, res) {
     timeLineModel.create({
       'text': req.body.text,
       'hits': req.body.hits,
