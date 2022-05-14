@@ -56,25 +56,43 @@ const timeLineModel = mongoose.model("times", TimesSchema);
 
 const pokeModel = mongoose.model("pokemon", PokeSchema);
 
-app.get('/pokemon/getPoke', function(req, res) {
+// app.get('/pokemon/getPoke', function(req, res) {
 
-  pokeModel.find({}, function(err, data){
-    var x = 1;
-    data.forEach(element => {
-      app.get(`/pokemon/getPoke/${x}`, function(req, res) {
-        res.send(JSON.stringify(data));
-        x++;
-      })
+//   pokeModel.find({}, function(err, data){
+//     var x = 1;
+//     data.forEach(element => {
+//       app.get(`/pokemon/getPoke/${x}`, function(req, res) {
+//         res.send(JSON.stringify(element));
+//         x++;
+//       })
+//     }
+//       )
+//       if (err){
+//         console.log("Error " + err);
+//       }else{
+//         console.log("Data "+ JSON.stringify(data) );
+//       }
+//       res.send(JSON.stringify(data));
+//   });
+// })
+
+pokeModel.find({}, function(err, data){
+  var x = 1;
+  data.forEach(element => {
+    app.get(`/pokemon/getPoke/${x}`, function(req, res) {
+      res.send(JSON.stringify(element));
+      x++;
+    })
+  }
+    )
+    if (err){
+      console.log("Error " + err);
+    }else{
+      console.log("Data "+ JSON.stringify(data) );
     }
-      )
-      if (err){
-        console.log("Error " + err);
-      }else{
-        console.log("Data "+ JSON.stringify(data) );
-      }
-      res.send(JSON.stringify(data));
-  });
-})
+    res.send(JSON.stringify(data));
+});
+
 
 // for (var x = 1; x < 31; x++) {
 //   app.get(`/pokemon/getPoke/${x}`, function(req, res) {
