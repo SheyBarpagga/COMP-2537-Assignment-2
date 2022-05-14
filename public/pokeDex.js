@@ -2,6 +2,7 @@
 var counter = 0;
 document.addEventListener("DOMContentLoaded", () => {
     getPoke();
+    addNewEvent("hello");
 })
 
 
@@ -87,7 +88,7 @@ function addNewEvent(poke_name) {
 
     var now = new Date(Date.now());
     var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-    console.log(now);
+    console.log(formatted);
     $.ajax({
         url: "https://intense-woodland-48789.herokuapp.com/Times/insert",
         type: "put",
