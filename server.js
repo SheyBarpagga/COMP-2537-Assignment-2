@@ -41,9 +41,9 @@ app.get('/times/getAllEvents', function(req, res) {
 
 app.put('/times/insert', function(req, res) {
   timeLineModel.create({
-    'text': req.body.text,
-    'hits': req.body.hits,
-    'time': req.body.time
+    text: req.body.text,
+    hits: req.body.hits,
+    time: req.body.time
   }, function(err, data){
     if (err){
       console.log("Error " + err);
