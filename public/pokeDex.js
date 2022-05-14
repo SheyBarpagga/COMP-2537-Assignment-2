@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function getPoke() {
-    for (var x = 0; x < 9; x++) {
+    for (var x = 1; x < 10; x++) {
         var random = Math.floor(Math.random() * 9);
-        fetch(`https://intense-woodland-48789.herokuapp.com/pokemon/getPoke/${random}`)
+        fetch(`https://intense-woodland-48789.herokuapp.com/pokemon/getPoke/${x}`)
 
         .then(response => response.json())
 
