@@ -68,5 +68,7 @@ app.put('/times/insert', function(req, res) {
         console.log("Data "+ JSON.stringify(data) );
       }
       res.send(JSON.stringify(data));
+
+      
   });
 })
