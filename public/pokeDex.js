@@ -91,9 +91,9 @@ function addNewEvent(poke_name) {
     $.ajax({
         url: "https://intense-woodland-48789.herokuapp.com/times/insert",
         type: "put",
-        body: {
+        data: {
             text: `${poke_name}`,
-            hits: "1",
+            hits: 1,
             time: `${formatted}`
         },
         success: (res)=>{console.log(res)}

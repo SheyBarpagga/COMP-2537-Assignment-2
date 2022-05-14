@@ -3,6 +3,8 @@
 const express = require('express');
 const app = express();
 
+const bodyparser = require("body-parser");
+
 const mongoose = require('mongoose');
 
 const cors = require('cors');
@@ -15,6 +17,10 @@ app.listen(process.env.PORT || 5000, function (err) {
     if (err)
         console.log(err);
 })
+
+app.use(bodyparser.urlencoded({
+  extended: true
+}));
 
 
 mongoose.connect("mongodb+srv://packobtainer:37h3YwU3pc9Axpi@cluster0.xw7wz.mongodb.net/test", {useNewUrlParser: true, useUnifiedTopology: true});
@@ -41,9 +47,9 @@ app.get('/times/getAllEvents', function(req, res) {
 
 app.put('/times/insert', function(req, res) {
   timeLineModel.create({
-    text: req.body.text,
-    hits: req.body.hits,
-    time: req.body.time
+    'text': req.body.text,
+    'hits': req.body.hits,
+    'time': req.body.time
   }, function(err, data){
     if (err){
       console.log("Error " + err);
