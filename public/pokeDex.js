@@ -93,7 +93,7 @@ function addNewEvent(poke_name) {
         type: "put",
         body: {
             text: `${poke_name}`,
-            hits: 1,
+            hits: "1",
             time: `${formatted}`
         },
         success: (res)=>{console.log(res)}
